@@ -20,6 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivluz"
         android:layout_margin="10dp"
+        android:layout_marginStart="10"
+        android:layout_marginTop="10"
+        android:layout_marginEnd="10"
+        android:layout_marginBottom="10"
         android:text="LUZ"
         android:textAlignment="center"
         android:textColor="#4E2501"
@@ -41,12 +45,16 @@
         android:id="@+id/switch2"
         android:layout_width="match_parent"
         android:layout_height="103dp"
+        android:layout_below="@+id/textView"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10"
+        android:layout_marginTop="10"
+        android:layout_marginEnd="10"
+        android:layout_marginBottom="10"
         android:onClick="validarswitch2"
         android:text="Luz"
-        android:textSize="35dp"
-        android:layout_margin="10dp"
         android:textAlignment="center"
-        android:layout_below="@+id/textView"/>
+        android:textSize="35dp" />
 
 
 </RelativeLayout>
