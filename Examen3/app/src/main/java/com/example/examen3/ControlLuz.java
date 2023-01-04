@@ -8,6 +8,13 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class ControlLuz extends AppCompatActivity {
     Switch switch2;
     Integer  statusLuz;
@@ -28,6 +35,8 @@ public class ControlLuz extends AppCompatActivity {
         switch2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                actualizar("http://192.168.114.225/serviceexamen/regprodfact.php");
+
                 if (statusLuz == 1) {
                     statusLuz = 0;
                     validarstatusLuz();
@@ -57,5 +66,21 @@ public class ControlLuz extends AppCompatActivity {
 
 
         }
+    }
+    private void actualizar(String url) {
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "operción realiizada", Toast.LENGTH_LONG).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
     }
 }
