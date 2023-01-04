@@ -22,12 +22,52 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+// Consumo CONTINUO de WS consultarTemperaturaCorporal [000webhost-eec]
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class C2TemperaturaActivity extends AppCompatActivity {
+
+    // private class
+    // Consumo CONTINUO de WS consultarTemperaturaCorporal [000webhost-eec]
+    private class ConsultarTemperaturaTask extends TimerTask {
+
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    //TODO: Implementar llamada a WS consultarTempCorp() y actualizar la Temperatura en el
+                    // textView [tvValorTemperaturaCorp]
+                    // Toast.makeText( getApplicationContext(), "Consultando temperatura V2...", Toast.LENGTH_SHORT).show();
+                    tvValorTemperaturaCorp = findViewById( R.id.tvValorTemperaturaCorp );
+
+                    /*
+                    String urlTmp = "http://" + WSConfig.serverIP + "/ws_punto_venta_android/validarLoginUsuario.php?usuario=" + cTUsuario.getText().toString() + "&password=" + cTContrasenia.getText().toString();
+
+                    validarUsuario( urlTmp );
+                    */
+
+                    // tvValorTemperaturaCorp.setText( "66.6 °Cel" );
+                    // String urlConsultaTempCorp = "http://localhost/ws_punto_venta_android/random_temperatures.php";
+                    // http://192.168.0.108/ws_punto_venta_android/random_temperatures.php
+
+                    consultarTemperaturaBD( urlConsultaTempCorp );
+
+                    // getSupportFragmentManager().findFragmentById()
+                } //--fin: run()
+            });
+        } //--fin: run()
+
+    } //--fin :: Private Class :: ConsultarTemperaturaTask
+
 
     Button btnBackToHome;
     ImageButton btnReloadTemperature;
     TextView tvValorTemperaturaCorp, tVValorTimestamp;
     String urlConsultaTempCorp = "https://conceptos-web-2010067-eec.000webhostapp.com/consultar_temperatura_corporal.php";
+
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +100,11 @@ public class C2TemperaturaActivity extends AppCompatActivity {
         // Consultar Temperatura en BD y actualizar label 'TextView' [tvValorTemperaturacorp]...
         // String urlConsultaTempCorp = "http://192.168.100.48/ws_punto_venta_android/random_temperatures.php";
 
-        consultarTemperaturaBD( urlConsultaTempCorp );
+        // Consulta continua de WS [temperaturaCorporal]
+        timer = new Timer();
+        timer.scheduleAtFixedRate( new ConsultarTemperaturaTask(), 0, 350 );
+
+        //consultarTemperaturaBD( urlConsultaTempCorp );
 
     } //--fin : onCreate()
 
@@ -68,7 +112,7 @@ public class C2TemperaturaActivity extends AppCompatActivity {
     private void consultarTemperaturaBD(String url){
 
         // String nombreCompletoTmp;
-        Toast.makeText( getApplicationContext(), url, Toast.LENGTH_LONG ).show();
+        // Toast.makeText( getApplicationContext(), url, Toast.LENGTH_LONG ).show();
 
         // Para JsonArrayRequest :: default :: método GET de Http
 
