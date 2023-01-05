@@ -89,6 +89,7 @@ public class C2TemperaturaActivity extends AppCompatActivity {
             }
         }); //--fin: btnBackToHome.clickListener()
 
+        /*
         btnReloadTemperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,15 +97,17 @@ public class C2TemperaturaActivity extends AppCompatActivity {
                 consultarTemperaturaBD( urlConsultaTempCorp );
             }
         }); //--fin: btnReloadTemperature.clickListener()
+        */
 
         // Consultar Temperatura en BD y actualizar label 'TextView' [tvValorTemperaturacorp]...
         // String urlConsultaTempCorp = "http://192.168.100.48/ws_punto_venta_android/random_temperatures.php";
 
         // Consulta continua de WS [temperaturaCorporal]
+
         timer = new Timer();
         timer.scheduleAtFixedRate( new ConsultarTemperaturaTask(), 0, 350 );
 
-        //consultarTemperaturaBD( urlConsultaTempCorp );
+        // consultarTemperaturaBD( urlConsultaTempCorp );
 
     } //--fin : onCreate()
 

@@ -63,14 +63,15 @@ public class ControlPuerta extends AppCompatActivity {
             }
         }); //--fin: btnBackToHome.clickListener()
 
+        /*
         btnReloadPuerta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO : Actualizar temperatura [Consultar Temperatura en BD]
                 //consultarTemperaturaBD( urlConsultaTempCorp );
             }
-        }); //--fin: btnReloadTemperature.clickListener()
-
+        }); //--fin: btnReloadPuerta.clickListener()
+        */
 
     }
 
