@@ -26,6 +26,9 @@ import org.json.JSONObject;
 import java.util.Timer;
 import java.util.TimerTask;
 
+// Invocacion con DELAY para WS agregarHuellaDisable
+import android.os.Handler;
+
 public class ControlPuerta extends AppCompatActivity {
 
     // Consumo CONTINUO de WS consultarEstatusPuerta [000webhost-eec]
@@ -67,6 +70,9 @@ public class ControlPuerta extends AppCompatActivity {
     // ImageButton btnReloadPuerta;
     String urlConsultarEstatusCerradura = "https://conceptos-web-2010067-eec.000webhostapp.com/consultar_estatus_cerradura.php";
 
+    // Button [agregarHuella]... --control de Arduino
+    Button btnAgregarHuella;
+
     Timer timer;
 
     @Override
@@ -76,6 +82,7 @@ public class ControlPuerta extends AppCompatActivity {
 
         switchCerradura = (Switch) findViewById(R.id.switchCerradura);
         imageBtnEstatusCerradura = (ImageButton) findViewById(R.id.imageBtnEstatusCerradura);
+        btnAgregarHuella = (Button) findViewById( R.id.btnAgregarHuella );
 
         statusControlPuerta = 0; // CERRADA
         switchCerradura.setChecked( false ); // CERRADA
@@ -148,6 +155,30 @@ public class ControlPuerta extends AppCompatActivity {
                 finish();
             }
         }); //--fin: btnBackToHome.clickListener()
+
+        btnAgregarHuella.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                // TODO: Implementar consumo de WS para setear campo [RECEIVED_BOOL5] = 1
+                String urlAgregarHuellaEnable = "https://conceptos-web-2010067-eec.000webhostapp.com/control_leds.php?num_led=5" + "&valor=1";
+                actualizarLEDEnBD( urlAgregarHuellaEnable );
+                // Luego DELAY de 600 ms para setear de nueva cuenta [RECEIVED_BOOL5] = 0
+                String urlAgregarHuellaDisable = "https://conceptos-web-2010067-eec.000webhostapp.com/control_leds.php?num_led=5" + "&valor=0";
+
+                final Handler handler = new Handler();
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do something AFTER 1200 ms == 1.2 s
+                        actualizarLEDEnBD( urlAgregarHuellaDisable );
+                    }
+                }, 700); //--fin: handler.postDelayed()
+
+            } //--fin :onClick()
+
+        }); //--fin: btnAgregarHuella.clickListener()
 
         /*
         btnReloadPuerta.setOnClickListener(new View.OnClickListener() {
