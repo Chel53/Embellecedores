@@ -75,7 +75,7 @@ public class C2TemperaturaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_c2_temperatura);
 
         btnBackToHome = (Button) findViewById( R.id.btnBackToHome );
-        btnReloadTemperature = (ImageButton) findViewById( R.id.btnReloadTemperature );
+        //btnReloadTemperature = (ImageButton) findViewById( R.id.btnReloadTemperature );
         tvValorTemperaturaCorp = (TextView) findViewById( R.id.tvValorTemperaturaCorp );
         tVValorTimestamp = (TextView) findViewById( R.id.tVValorTimestamp );
 

@@ -171,8 +171,7 @@
                 android:layout_weight="0.3"
                 android:gravity="center">
 
-                <!-- Button :: RELOAD -->
-
+                <!-- Button :: RELOAD
 
                 <ImageButton
                     android:id="@+id/btnReloadTemperature"
@@ -180,6 +179,8 @@
                     android:layout_height="40dp"
                     app:srcCompat="@drawable/reload_icon"
                     android:background="@drawable/gradiente_claro_botones"/>
+                    -->
+
 
             </RelativeLayout>
 

@@ -2,8 +2,10 @@ package com.example.examen3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -19,6 +21,8 @@ public class ControlLuz extends AppCompatActivity {
     Switch switch2;
     Integer  statusLuz;
     ImageButton btniLuz;
+    Button btnBackToHomeL;
+    ImageButton btnReloadLuz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ public class ControlLuz extends AppCompatActivity {
         btniLuz = findViewById(R.id.btniLuz);
         statusLuz = 1;
         btniLuz.setBackgroundDrawable(null);
+
+        btnBackToHomeL = (Button) findViewById( R.id.btnBackToHomeL );
+        //btnReloadTLuz = (ImageButton) findViewById( R.id.btnReloadLuz);
 
         validarstatusLuz();
 
@@ -47,6 +54,24 @@ public class ControlLuz extends AppCompatActivity {
 
             }
         });
+
+        btnBackToHomeL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // -->> Enviar a pantalla de MENU Principal
+                Intent intent = new Intent(ControlLuz.this, MenuPrincipalActivity.class);
+                startActivity( intent );
+                finish();
+            }
+        }); //--fin: btnBackToHome.clickListener()
+
+        btnReloadLuz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO : Actualizar temperatura [Consultar Temperatura en BD]
+                //consultarTemperaturaBD( urlConsultaTempCorp );
+            }
+        }); //--fin: btnReloadTemperature.clickListener()
     }
 
 
