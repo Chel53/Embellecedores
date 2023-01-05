@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="0.26"
-        android:background="@drawable/smoked_circuit_board"
         tools:ignore="Suspicious0dp">
 
         <LinearLayout
@@ -22,17 +21,19 @@
             android:gravity="center">
 
             <TextView
-                android:fontFamily="@font/nombre_nueva"
+                android:id="@+id/titleMenuPrincipal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/titleMenuPrincipal"
-                android:text="MENU DE OPCIONES"
                 android:layout_margin="3dp"
+                android:fontFamily="@font/nombre_nueva"
+                android:text="¡BIENVENIDO!
+                MENU DE OPCIONES"
+                android:textAlignment="center"
+                android:textColor="#101010"
                 android:textSize="35sp"
                 android:textStyle="bold"
-                android:textColor="#FF5722"
-                />
 
+                />
         </LinearLayout>
 
     </RelativeLayout>

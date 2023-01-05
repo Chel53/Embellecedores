@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado_fragmentos"
+    android:orientation="vertical"
+    tools:context=".MenuPrincipalActivity">
+
+
+    <TextView
+        android:id="@+id/titleMenuPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/nombre_nueva"
+        android:text="¡BIENVENIDO!
+                MENU DE OPCIONES"
+        android:textAlignment="center"
+        android:textColor="#101010"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:layout_width="136dp"
+        android:layout_height="99dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="118dp"
+        android:background="@drawable/personal" />
+
+    <Button
+        android:layout_width="161dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="344dp"
+        android:background="@drawable/ic_huella"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="161dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="242dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="201dp"
+        android:background="@drawable/ic_tempr"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="161dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/ic_foco"
+        android:textSize="35sp" />
+
+    <TextView
+        android:layout_width="222dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/nueva_anton"
+        android:text="Puerta y cerradura"
+        android:textColor="#090909"
+        android:textSize="35sp" />
+
+    <TextView
+        android:layout_width="222dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="406dp"
+        android:layout_marginEnd="107dp"
+        android:fontFamily="@font/nueva_anton"
+        android:text="Temperatura corporal"
+        android:textColor="#101010"
+        android:textSize="35sp" />
+
+    <TextView
+        android:layout_width="222dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="563dp"
+        android:layout_marginEnd="3dp"
+        android:fontFamily="@font/nueva_anton"
+        android:text="Luces de oficina"
+        android:textColor="#101010"
+        android:textSize="35sp" />
+
+
+</RelativeLayout>
+
+
