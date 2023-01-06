@@ -22,7 +22,6 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         btnMenuOptC3LucesOff = (Button) findViewById( R.id.btnMenuOptC3LucesOff );
 
         btnMenuOptC1Huella.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 //TODO: Redirigir a la Pantalla (Acticity) :: Circuito 1: Huella
