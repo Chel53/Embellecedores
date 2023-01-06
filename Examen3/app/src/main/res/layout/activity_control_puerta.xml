@@ -27,8 +27,8 @@
                 android:fontFamily="@font/fff_tusj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/titleTemperaturaCorp"
-                android:text="Circuito 2: Temp. Corp. + Alarma Sonora"
+                android:id="@+id/titleControlPuerta"
+                android:text="Circuito 1: Huella + Cerradura"
                 android:layout_margin="3dp"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -196,7 +196,7 @@
             android:text=" Home "
             android:textAllCaps="false"
             android:textSize="19sp"
-            android:layout_marginLeft="250dp"/>
+            />
 
     </RelativeLayout>
 
