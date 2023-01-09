@@ -17,9 +17,9 @@ int LED3 = 4;
 int LED4 = 5;
 int LED5 = 6;
 
+int relay =4;
+const int sensor =2;
 
-int relay =2;
-const int sensor =7;
 
 
 
@@ -166,9 +166,9 @@ void setup() {
   
 
 
-pinMode(relay,OUTPUT);
-pinMode(relay,OUTPUT);
-Serial.begin(9600);
+// put your setup code here, to run once:
+  pinMode(relay,OUTPUT);
+  pinMode(sensor,INPUT);
 
  
   ESP8266.begin(9600);//default baudrate for ESP
@@ -182,16 +182,25 @@ Serial.begin(9600);
 void loop() {
 
 
-  if (digitalRead(sensor) or received_bool_2==1 )
-  {digitalWrite(relay,LOW);
-  //Serial.println("Relevador accionado");
-  delay(100);  }
-else{
-  digitalWrite(relay,HIGH);
-  //Serial.println("Relevador NO accionado");
-  delay(100); 
+ // if (digitalRead(sensor) or received_bool_2==1 )
+  int val =digitalRead(sensor);
+  
+  Serial.println("valor de mov");
+  Serial.println(val); 
+  if (val or received_bool_2==1 )
+  {
+    digitalWrite(relay,LOW);
+    Serial.println("Relevador accionado");
+    delay(1000);
+      }
+  else{
+    digitalWrite(relay,HIGH);
+    Serial.println("Relevador NO accionado");
+   delay(1000); 
 }
 
+
+ send_to_server_5();
 
 
   
@@ -246,7 +255,7 @@ else{
   */
 
   
-  send_to_server_5();
+ 
   
 
   
