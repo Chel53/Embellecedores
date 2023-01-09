@@ -120,6 +120,9 @@ public class ControlLuz extends AppCompatActivity {
                     statusControlLuz = 0; // Apagadas
                     switchLucesOficina.setChecked( false ); // Apagadas
                     switchLucesOficina.setText( "ENCENDER" );
+
+                    imgBtnEstatusLuz.setImageResource(R.drawable.apagado);
+
                     // validarstatusLuz();
                 } else {
                     // Luces APAGADAS Actualmente [statusControlLuz == 0]
@@ -131,6 +134,8 @@ public class ControlLuz extends AppCompatActivity {
                     statusControlLuz = 1; // ENCENDIDO
                     switchLucesOficina.setChecked( true );
                     switchLucesOficina.setText( "Apagar" );
+
+                    imgBtnEstatusLuz.setImageResource(R.drawable.encendido);
                     // validarstatusLuz();
                 }
 
@@ -159,8 +164,8 @@ public class ControlLuz extends AppCompatActivity {
 
         // TODO: inicializar [statusLucesOff] de ACUERDO al valor recuperado del WS
         // consumo constante cada 350 ms
-        timer = new Timer();
-        timer.scheduleAtFixedRate( new ConsultarEstatusLucesOficinaTask(), 0, 350 );
+        //timer = new Timer();
+        //timer.scheduleAtFixedRate( new ConsultarEstatusLucesOficinaTask(), 0, 350 );
 
     } //--fin: onCreate()
 

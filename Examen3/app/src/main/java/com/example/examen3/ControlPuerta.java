@@ -127,6 +127,8 @@ public class ControlPuerta extends AppCompatActivity {
                     statusControlPuerta = 0;
                     switchCerradura.setChecked( false );
                     switchCerradura.setText( "ABRIR la puerta" );
+
+                    imageBtnEstatusCerradura.setImageResource(R.drawable.cerrada);
                     // validarstatusPuer();
                 } else {
                     // Puerta CERRADA Actualmente,
@@ -141,6 +143,8 @@ public class ControlPuerta extends AppCompatActivity {
                     statusControlPuerta = 1;
                     switchCerradura.setChecked( true );
                     switchCerradura.setText( "Cerrar la puerta" );
+
+                    imageBtnEstatusCerradura.setImageResource(R.drawable.abierta);
                     // validarstatusPuer();
                 }
             }
@@ -192,8 +196,8 @@ public class ControlPuerta extends AppCompatActivity {
 
         // TODO: inicializar [statusPuer] de ACUERDO al valor recuperado del WS
         // consumo constante cada 350 ms
-        timer = new Timer();
-        timer.scheduleAtFixedRate( new ConsultarEstatusPuertaTask(), 0, 350 );
+        //timer = new Timer();
+        //timer.scheduleAtFixedRate( new ConsultarEstatusPuertaTask(), 0, 350 );
 
     } //--fin: onCreate()
 
